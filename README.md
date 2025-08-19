@@ -4,9 +4,13 @@ Neurobionics Lab, Department of Robotics, University of Michigan, 2024
 
 ## Overview
 
-This repository contains the code for a Google Apps Script (GAS) project. The project is designed to automate the onboarding process for new hires. The Apps Script project is built from a Google Form intake, where lab members fill out new hires' information. If certain criteria are met (e.g. the new hire will be paid) an email is sent to HR upon submission of the form. The tool is ‘deploy and forget,’ meaning once the infrastructure is in place, it operates automatically in perpetuity. This tool was written for the Neurobionics and Locomotor Control Systems Labs at the University of Michigan Department of Robotics. The purpose of this tool is to establish an automated system for new laboratory personnel intake and tracking. 
+This repository contains the code for a Google Apps Script (GAS) project. The project is designed to automate the onboarding process for new hires (grad students, postdocs, full-time staff, part-time/temp staff, student interns, volunteers/visiting scholars). The Apps Script project is built from a Google Form intake, where lab members fill out new hires' information. If certain criteria are met (e.g. the new hire is NOT UM affiliated, or the new hire will be paid) an email is sent to HR upon submission of the form. Furthermore, submission of the form triggers an email to be sent to the new hire, which contains in=mportant onboarding information. 
+
+The tool is ‘deploy and forget,’ meaning once the infrastructure is in place, it operates automatically in perpetuity. This tool was written for the Neurobionics and Locomotor Control Systems Labs at the University of Michigan Department of Robotics. The purpose of this tool is to establish an automated system for new laboratory personnel intake, onboarding, and tracking. 
 
 * Automatically email HR to initiate hiring process when certain form criteria are met
+* Automatically email new laboratory personnel with important onboarding information
+* Automatically email laboratory manager and mentor (if applicable) of form completion
 * Collect responses in a google sheet for easy tracking and review
 
 To get started, you will need to create and modify some Google documents, which will then set the tool up for your group.  Once it’s created and launched, it will operate in perpetuity. 
@@ -21,7 +25,11 @@ Features:
 
 ## Files
 
-- `Code.js`: Contains the main script logic for processing form data and sending emails.
+- `Onboarding_GAS_v1`: Contains the initial draft script logic for processing form data and sending emails.
+- `Onboarding_GAS_v2`: Contains updated/current script logic for processing form data and sending emails.
+- `Neurobionics_Website_Frontend`: Contains frontend html for embedded website form (does not work with GAS - Browser blocks data fetch request due to CORS policy error. Apps Script web apps do not respond with Access-Control-Allow-Origin)
+- `Neurobionics_Website_Form`: Contains backend logic for HTML front-end. Dead end, but kept logic as archive.
+- NOT INCLUDED: `welcome_email.html`, contains proprietary organization intake and onboarding information.
 
 ## Setup
 
